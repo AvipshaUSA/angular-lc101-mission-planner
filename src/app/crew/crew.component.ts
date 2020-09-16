@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./crew.component.css']
 })
 export class CrewComponent implements OnInit {
-
+inCrew: boolean = false;
   crew: object[] = [
     {name: "Eileen Collins", firstMission: false},
     {name: "Mae Jemison", firstMission: false},
@@ -17,5 +17,4 @@ export class CrewComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
