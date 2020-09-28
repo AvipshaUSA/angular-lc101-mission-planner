@@ -5,10 +5,10 @@
             <!-- "Add to Cargo Hold" button goes here. -->
            
             {{item.name}}, {{item.mass}} kg
-            <!-- <button [class.active]="item.mass+cargoMass<=maximumAllowedMass && cargoHold.length < maxItems" [disabled]="item.mass+cargoMass>maximumAllowedMass || cargoHold.length >= maxItems" (click)="addItem(item)">Add to Cargohold</button>-->
-         <button *ngIf ="cargoHold.length < 10 || maximumAllowedMass-cargoMass <= 2000  ; else active" (click)= " addItem(item)" >Add to Cargohold</button>
-            <ng-template #active>
-                <button (click)= " addItem(item)" disabled >Add to Cargohold</button>
+            <!-- <button [class.active]="item.mass+cargoMass<=maximumAllowedMass && cargoHold.length < maxItems" [disabled]="item.mass+cargoMass>maximumAllowedMass || cargoHold.length >= maxItems" (click)="addItem(item)">Add to Cargohold</button> -->
+          <button style ="background-color: yellow"*ngIf =" cargoHold.length < 10 && item.mass+cargoMass <= 2000; else deactive" (click)= " addItem(item) " >Add to Cargohold</button>
+            <ng-template #deactive>
+                <button (click)= "addItem(item)" disabled>Add to Cargohold</button>
             </ng-template> 
         </li>
     </ol>
